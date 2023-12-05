@@ -24,4 +24,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: "cd ${{ secrets.PROJECT_DIR }} && ./.scripts/deploy.sh"
+          script: |
+            cd ${{ secrets.PROJECT_DIR }}
+            git pull origin production
+            
